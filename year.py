@@ -5,10 +5,10 @@ from datetime import *
 from typing import Iterable
 
 def N_cut_by_year(path: str) -> None:
-    """Open .csv file from path and fill "2/" folder with n files : 1 file = 1 year
+    """open dataset, split dataset to /2 in year files
 
     Args:
-        path (str): path to file to cut
+        path (str): _description_
     """
     with open(path, "r", encoding="utf-8", newline="") as file:
         reader = csv.reader(file)

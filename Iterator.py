@@ -5,6 +5,11 @@ import csv
 class Iterator:
 
     def __init__(self, name_of_file: str) -> None:
+        """Initialization
+
+        Args:
+            name_of_file (str): _description_
+        """
         self.name_of_file = name_of_file
         self.counter = 0
         self.list = []
@@ -17,6 +22,14 @@ class Iterator:
         return self
 
     def __next__(self) -> int:
+        """next
+
+        Raises:
+            StopIteration: _description_
+
+        Returns:
+            int: _description_
+        """
         if self.counter < len(self.list):
             tmp = self.list[self.counter]
             self.counter += 1
