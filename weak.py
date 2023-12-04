@@ -17,7 +17,7 @@ def N_cut_by_weak(path: str) -> None:
                     data = []
                     for row in reader:
                         for day in range(1+7*i, 8+7*i):
-                            if str(day).zfill(2) == row[0][0]+row[0][1] and str(month).zfill(2) == row[0][3]+row[0][4] and str(year).zfill(4) == row[0][6]+row[0][7]+row[0][8]+row[0][9]:
+                            if str(year).zfill(4) == row[0][0]+row[0][1]+row[0][2]+row[0][3] and str(month).zfill(2) == row[0][5]+row[0][6] and str(day).zfill(2) == row[0][7]+row[0][8] :
                                 data.append(row)
                                 day_x = row[0]
                 

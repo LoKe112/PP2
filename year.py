@@ -13,10 +13,10 @@ def N_cut_by_year(path: str) -> None:
         with open(path, "r", encoding="utf-8", newline="") as file:
             reader = csv.reader(file)
             for row in reader:
-                if f".{year}" in row[0]:
+                if str (year) in row[0]:
                     data.append(row)
         time.sleep(0.1)
-        with open(f"2\\{year}0101-{year}1231.csv", "w", encoding="utf-8", newline="") as file_N:
+        with open(f"2\\{year}-{year+1}.csv", "w", encoding="utf-8", newline="") as file_N:
             writer = csv.writer(file_N)
             writer.writerows(data)
         time.sleep(0.1)
