@@ -17,7 +17,7 @@ def find_1(path: str, date: datetime) -> list[str] | None:
     with open(path, "r", encoding="utf-8", newline="") as file:
         reader = csv.reader(file)
         for row in reader:
-            d=datetime.strptime(row[0],"%Y-%m-%d")
+            d = datetime.strptime(row[0], "%Y-%m-%d")
             if d == date:
                 return row
         return None
@@ -41,14 +41,14 @@ def find_2(path1: str, path2: str, date: datetime) -> list[str] | None:
     with open(path1, "r", encoding="utf-8", newline="") as file:
         reader = csv.reader(file)
         for i, row in enumerate(reader):
-            d=datetime.strptime(row[0],"%Y-%m-%d")
+            d = datetime.strptime(row[0], "%Y-%m-%d")
             if d == date:
                 col1 = row[0]
                 rowIndex = i
                 break
     if col1 is None:
         return None
-    
+
     with open(path2, "r", encoding="utf-8", newline="") as file:
         reader = csv.reader(file)
         for i, row in enumerate(reader):
@@ -73,16 +73,18 @@ def find_3(path: str, date: datetime) -> list[str] | None:
         list[str] : rows 
     """
     for file in os.listdir(path):
-        d1, d2 = map(lambda x: datetime.strptime(x,"%Y%m%d"), file.split(".")[0].split("_"))
+        d1, d2 = map(lambda x: datetime.strptime(
+            x, "%Y%m%d"), file.split(".")[0].split("_"))
         if (d1 <= date <= d2):
             with open(path + file, "r", encoding="utf-8", newline="") as fileData:
                 reader = csv.reader(fileData)
                 for row in reader:
-                    d=datetime.strptime(row[0],"%Y-%m-%d")
+                    d = datetime.strptime(row[0], "%Y-%m-%d")
                     if d == date:
-                       return row
+                        return row
                 return None
     return None
+
 
 def find_4(path: str, date: datetime) -> list[str] | None:
     """find in weeks
@@ -102,11 +104,12 @@ def find_4(path: str, date: datetime) -> list[str] | None:
             with open(path + file, "r", encoding="utf-8", newline="") as fileData:
                 reader = csv.reader(fileData)
                 for row in reader:
-                    d=datetime.strptime(row[0], "%Y-%m-%d")
+                    d = datetime.strptime(row[0], "%Y-%m-%d")
                     if d == date:
                         return row
                 return None
     return None
+
 
 def main() -> None:
     dt = datetime.strptime(input(), "%Y-%m-%d")

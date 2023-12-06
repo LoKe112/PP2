@@ -19,7 +19,7 @@ def next_iteration(path: str) -> tuple:
             for i in range(1, len(row)):
                 mass.append(row[i])
             yield (data, mass)
-            
+
 
 iter = next_iteration("dataset.csv")
 first = next(iter)
@@ -29,5 +29,5 @@ print(second)
 
 iter = Iterator("dataset.csv")
 
-for i in range(1,10):
+for i in range(1, 10):
     print(next(iter))

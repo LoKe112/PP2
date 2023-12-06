@@ -13,17 +13,17 @@ def CSV_split_by_year(path: str) -> None:
     """
     with open(path, "r", encoding="utf-8", newline="") as file:
         reader = csv.reader(file)
-        data: dict[int,list[Iterable]]
+        data: dict[int, list[Iterable]]
         data = {}
         for row in reader:
-            d=datetime.strptime(row[0],"%Y-%m-%d")
+            d = datetime.strptime(row[0], "%Y-%m-%d")
             if d.year not in data:
-                data[d.year]=[]
+                data[d.year] = []
             data[d.year].append(row)
         for year in data.keys():
-            start_date=data[year][0][0].replace("-","")
-            end_date=data[year][-1][0].replace("-","")
-            with open(f"2\\{start_date}_{end_date}.csv" , "w", encoding="utf-8", newline="") as file_N:
+            start_date = data[year][0][0].replace("-", "")
+            end_date = data[year][-1][0].replace("-", "")
+            with open(f"2\\{start_date}_{end_date}.csv", "w", encoding="utf-8", newline="") as file_N:
                 writer = csv.writer(file_N)
                 writer.writerows(data[year])
 

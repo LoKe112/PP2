@@ -7,7 +7,7 @@ class Iterator:
         """Initialization
 
         Args:
-            name_of_file (str): _description_
+            name_of_file (str): path to file to iterate
         """
         self.name_of_file = name_of_file
         self.counter = 0
@@ -23,8 +23,7 @@ class Iterator:
     def __next__(self) -> int:
         """next
 
-        Raises:
-            StopIteration: _description_
+
 
         Returns:
             int: _description_

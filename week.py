@@ -9,14 +9,14 @@ def CSV_split_by_week(path: str) -> None:
 
     Args:
         path (str): path to file to cut
-    """    
+    """
     with open(path, "r", encoding="utf-8", newline="") as file:
-        reader = csv.reader(file)        
+        reader = csv.reader(file)
         for row in reader:
-            d=datetime.strptime(row[0],"%Y-%m-%d")
-            with open(f"3\\{d.year}-{d.isocalendar().week}.csv" , "a", encoding="utf-8", newline="") as file_N:
+            d = datetime.strptime(row[0], "%Y-%m-%d")
+            with open(f"3\\{d.year}-{d.isocalendar().week}.csv", "a", encoding="utf-8", newline="") as file_N:
                 writer = csv.writer(file_N)
-                writer.writerow(row)              
+                writer.writerow(row)
     print("end")
 
 
