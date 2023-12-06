@@ -3,7 +3,7 @@ import time
 import os
 from Iterator import Iterator
 
-def next_iter(path: str) -> tuple:
+def next_iteration(path: str) -> tuple:
     """get next date in file
 
     Args:
@@ -25,7 +25,7 @@ def next_iter(path: str) -> tuple:
             yield (data, mass)
             
 
-iter = next_iter("dataset.csv")
+iter = next_iteration("dataset.csv")
 first = next(iter)
 print(first)
 second = next(iter)

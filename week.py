@@ -4,7 +4,7 @@ import time
 from datetime import *
 
 
-def N_cut_by_week(path: str) -> None:
+def CSV_split_by_week(path: str) -> None:
     """Open .csv file from path and fill "3/" folder with n files : 1 file = 1 weak
 
     Args:
@@ -21,7 +21,7 @@ def N_cut_by_week(path: str) -> None:
 
 
 def main():
-    N_cut_by_week("dataset.csv")
+    CSV_split_by_week("dataset.csv")
 
 
 if __name__ == '__main__':

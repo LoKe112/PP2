@@ -4,7 +4,7 @@ import time
 from datetime import *
 from typing import Iterable
 
-def N_cut_by_year(path: str) -> None:
+def CSV_split_by_year(path: str) -> None:
     """open dataset, split dataset to /2 in year files
 
     Args:
@@ -28,7 +28,7 @@ def N_cut_by_year(path: str) -> None:
 
 
 def main() -> None:
-    N_cut_by_year("dataset.csv")
+    CSV_split_by_year("dataset.csv")
 
 
 if __name__ == '__main__':

@@ -91,7 +91,7 @@ def find_4(path: str, date: datetime) -> list[str] | None:
         date (datetime): _description_
 
     Returns:
-        list[str] | None: _description_
+        rows 
     """
     week = date.isocalendar().week
     for file in os.listdir(path):

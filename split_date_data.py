@@ -2,7 +2,7 @@ import csv
 import time
 
 
-def file_cut_date_and_data(path: str) -> None:
+def split_date_and_data(path: str) -> None:
     """Open .csv file from path and fill "1/" folder with 2 files : DATA and DATE
 
     Args:
@@ -25,7 +25,7 @@ def file_cut_date_and_data(path: str) -> None:
 
 
 def main() -> None:
-    file_cut_date_and_data("dataset.csv")
+    split_date_and_data("dataset.csv")
 
 
 if __name__ == '__main__':
