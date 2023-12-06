@@ -4,11 +4,12 @@ import time
 from datetime import *
 from typing import Iterable
 
+
 def CSV_split_by_year(path: str) -> None:
-    """open dataset, split dataset to /2 in year files
+    """Split dataset.csv in n files (1 file = 1 year)
 
     Args:
-        path (str): _description_
+        path (str): path to file to cut
     """
     with open(path, "r", encoding="utf-8", newline="") as file:
         reader = csv.reader(file)

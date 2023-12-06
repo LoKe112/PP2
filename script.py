@@ -1,17 +1,18 @@
 import csv
+import os
 
 from datetime import datetime
-import os
+
 
 def find_1(path: str, date: datetime) -> list[str] | None:
     """find in full dataset
 
     Args:
-        path (str): _description_
-        date (datetime): _description_
+        path (str): path to file to cut x
+        date (datetime): date we want
 
     Returns:
-        list[str] | None: _description_
+        list[str] : rows 
     """
     with open(path, "r", encoding="utf-8", newline="") as file:
         reader = csv.reader(file)
@@ -26,12 +27,12 @@ def find_2(path1: str, path2: str, date: datetime) -> list[str] | None:
     """find in split X and Y datasets
 
     Args:
-        path1 (str): _description_
-        path2 (str): _description_
-        date (datetime): _description_
+        path1 (str): path to file to cut x
+        path2 (str): path to file to cut y
+        date (datetime): date we want
 
     Returns:
-        list[str] | None: _description_
+        list[str] : date row and data row
     """
     col1 = None
     col2 = None
@@ -65,11 +66,11 @@ def find_3(path: str, date: datetime) -> list[str] | None:
     """find in years
 
     Args:
-        path (str): _description_
-        date (datetime): _description_
+        path (str): path to file to cut
+        date (datetime): date we want
 
     Returns:
-        list[str] | None: _description_
+        list[str] : rows 
     """
     for file in os.listdir(path):
         d1, d2 = map(lambda x: datetime.strptime(x,"%Y%m%d"), file.split(".")[0].split("_"))
@@ -87,8 +88,8 @@ def find_4(path: str, date: datetime) -> list[str] | None:
     """find in weeks
 
     Args:
-        path (str): _description_
-        date (datetime): _description_
+        path (str): path to file to cut
+        date (datetime): date we want
 
     Returns:
         rows 

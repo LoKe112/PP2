@@ -3,7 +3,7 @@ import time
 
 
 def split_date_and_data(path: str) -> None:
-    """Open .csv file from path and fill "1/" folder with 2 files : DATA and DATE
+    """Split original dataset.csv to date(X) and data(Y) files in ladder 1
 
     Args:
         path (str): path to file to cut

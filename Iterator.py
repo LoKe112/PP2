@@ -3,7 +3,6 @@ import csv
 
 
 class Iterator:
-
     def __init__(self, name_of_file: str) -> None:
         """Initialization
 
