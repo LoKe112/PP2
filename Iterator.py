@@ -34,3 +34,14 @@ class Iterator:
             return tmp
         else:
             raise StopIteration
+
+
+def main() -> None:
+    iter = Iterator("dataset.csv")
+
+    for i in range(1, 10):
+        print(next(iter))
+
+
+if __name__ == '__main__':
+    main()
