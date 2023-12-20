@@ -113,11 +113,13 @@ def find_4(path: str, date: datetime) -> list[str] | None:
 
 def main() -> None:
     dt = datetime.strptime(input(), "%Y-%m-%d")
-    print(find_1("dataset.csv", dt))
-    print(find_2("1\\X.csv", "1\\Y.csv", dt))
-    print(find_3("2\\", dt))
-    print(find_4("3\\", dt))
+    print(find_1(os.path.join("dataset.csv"), dt))
+    print(find_2(os.path.join("1", "X.csv"), os.path.join("1", "Y.csv"), dt))
+    print(find_3(os.path.join("2", ""), dt))
+    print(find_4(os.path.join("3", ""), dt))
 
+
+2
 
 if __name__ == '__main__':
     main()
